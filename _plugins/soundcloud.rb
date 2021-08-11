@@ -1,86 +1,55 @@
-require 'json'
-require 'net/http'
+# SoundCloud player tag.
+#
+# Generates a SoundCloud player widget from any valid URI: track, playlist or user.
+#
+# Usage:
+#
+#   {% sc_player uri %}
+#
+# Example:
+#
+#   {% sc_player https://soundcloud.com/waek/daze-ft-girl-is-tough-new-york %}
+#
+# Configuration (in _config.yml):
+#
+#   sc_player:
+#     auto_play: false
+#     buying: true
+#     liking: true
+#     download: true
+#     sharing: true
+#     show_artwork: true
+#     show_comments: true
+#     show_playcount: true
+#     show_user: true
+#     start_track: 0
+#
+# Author: Mathieu Bernard
+# Plugin Source: http://github.com/itsbrnrd/jekyll_sc_player
+# Site Source: http://github.com/itsbrnrd/jekyll_sc_player
+# Plugin License: MIT
 
-# Title: SoundCloud plugin for Jekyll
-# Author: Nick Fisher (http://spadgos.github.com)
-# Edited on August, 7th 2012 by Felix Gläske
-#   Added possibility to just enter the url of a ressource to get it included.
-#   The old way is still working!
-# Description:
-#   Given a SoundCloud track, user, group, app or set, this will insert a SoundCloud HTML5 widget, with automatic Flash
-#   fallback for older browsers
-#
-# Syntax: {% soundcloud type id [option=value [option=value [...]]]%}
-# type can be one of "tracks", "groups", "users", "favorites", "apps", or "playlists".
-# id should be the id of the given resource. A username can also be used in the case of "users" or "favorites"
-#
-# or:
-#
-# Syntax: {% soundcloud url [option=value [option=value [...]]]%}
-# url should be the soudcloud url of the given resource.
-# options are:
-#
-# auto_play=<true|false>
-# buying=<true|false>
-# download=<true|false>
-# sharing=<true|false>
-# show_artwork=<true|false>
-# show_bpm=<true|false>
-# show_comments=<true|false>
-# show_playcount=<true|false>
-# show_user=<true|false>
-# single_active=<true|false>
-# start_track=<number>
-# color=<hexcode>
+require 'uri'
 
 module Jekyll
-  class SoundCloud < Liquid::Tag
-    def initialize(tag_name, markup, tokens)
-      #check if an url is given as argument => if yes the new method is used
-      if /^http/ =~ markup
-        #parsing the "new" way with only pasing the url of the ressource
-        if /(?<url>[a-z0-9\/\-\:\.]+)(?:\s+(?<options>.*))?/ =~ markup
-          info = retrieve_info(url)
-          @type  = info['kind'] + 's'
-          @id    = info['id']
-          @options = ([] unless options) || options.split(" ")
-        end
-      else
-        puts "no match"
-        #parsing the "old" way with type and id
-        if /(?<type>\w+)\s+(?<id>\d+)(?:\s+(?<options>.*))?/ =~ markup
-          @type  = type
-          @id    = id
-          @options = ([] unless options) || options.split(" ")
-        end
-      end
+  class SCPlayerTag < Liquid::Tag
+    def initialize(tag_name, config, token)
+      super
 
-      @markup = markup
-    end
+      @uris  = URI.extract(config)
 
-    def retrieve_info(path)
-      response = Net::HTTP.get_response("api.soundcloud.com","/resolve.json?client_id=YOUR_CLIENT_ID&url=" + path)
-      case response
-      when Net::HTTPRedirection then
-        location = response['location']
-        response = Net::HTTP.get_response(URI(location))
-      end
-      json = JSON.parse response.body
-      return json
+      @config = Jekyll.configuration({})['sc_player'] || {}
     end
 
     def render(context)
-      if @type and @id
-        @height = (450 unless @type == 'tracks') || 166
-        @resource = (@type unless @type === 'favorites') || 'users'
-        @extra = ("" unless @type === 'favorites') || '%2Ffavorites'
-        @joined_options = @options.join("&amp;")
-        "<iframe width=\"100%\" height=\"#{@height}\" scrolling=\"no\" frameborder=\"no\" src=\"http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2F#{@resource}%2F#{@id}#{@extra}&amp;#{@joined_options}\"></iframe>"
-      else
-        "Error processing input, expected syntax: {% soundcloud type id [options...] %} received: #{@markup}"
+      html = ""
+
+      @uris.each_with_index do |uri, index|
+        html << "<iframe id='sc-widget-#{index}' src='https://w.soundcloud.com/player/?url=#{uri}&#{URI.encode_www_form(@config)}' width='100%' scrolling='no' frameborder='no'></iframe>"
       end
+      return html
     end
   end
 end
 
-Liquid::Template.register_tag('soundcloud', Jekyll::SoundCloud)
+Liquid::Template.register_tag('sc_player', Jekyll::SCPlayerTag)
