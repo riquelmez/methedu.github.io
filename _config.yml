@@ -9,7 +9,7 @@ url: "https://riquelmez.github.io"
 baseurl: ""
 
 # Name of website
-title: 수학 공부
+title: 수학교육학 연구
 
 # Your name to show in the footer
 author: Clever
@@ -17,7 +17,7 @@ author: Clever
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  고등학교: "highschool_math"
+  주제: "mathedu_topics"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
