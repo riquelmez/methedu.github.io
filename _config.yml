@@ -192,17 +192,7 @@ footer-link-col: "#404040"
 
 
 # --- soundcloud --- #
-sc_player:
-  auto_play: false # Whether to start playing the widget after it’s loaded
-  buying: true # Show/hide buy buttons
-  liking: true # Show/hide like buttons
-  download: true # Show/hide download buttons
-  sharing: true # Show/hide share buttons/dialogues
-  show_artwork: true # Show/hide artwork
-  show_comments: true # Show/hide comments
-  show_playcount: true # Show/hide number of sound plays
-  show_user: true # Show/hide the uploader name
-  start_track: 0 # Preselects a track in the playlist, given a number between 0 and the length of the playlist.
+
 # --- Misc --- #
 
 # Ruby Date Format to show dates of posts
