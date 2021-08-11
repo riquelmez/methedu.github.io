@@ -5,6 +5,9 @@
 
 # --- Required options --- #
 
+url: "https://riquelmez.github.io"
+baseurl: ""
+
 # Name of website
 title: My Website
 
