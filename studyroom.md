@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 주제
+title: studyroom
+published: true
 ---
 
 ## A New Post
