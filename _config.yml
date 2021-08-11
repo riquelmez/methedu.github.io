@@ -17,6 +17,7 @@ author: Clever
 # --- List of links in the navigation bar --- #
 
 navbar-links:
+  Lectures: "lectures"
   Category: "category"
   Journals:
     - ESM: "https://www.springer.com/journal/10649" 
@@ -24,7 +25,6 @@ navbar-links:
     - MTL: "https://www.tandfonline.com/toc/hmtl20/current" 
     - IJSME: "https://www.springer.com/journal/10763" 
     - JMTE: "https://www.springer.com/journal/10857"
-  Lectures: "lectures"
     
   Study room: "studyroom"
 
