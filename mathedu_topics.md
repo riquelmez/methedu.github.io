@@ -1,7 +1,6 @@
 ---
 layout: page
-title: 수학 공부
-subtitle: 자료실
+title: 주제
 ---
 
 ...
