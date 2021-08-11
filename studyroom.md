@@ -1,8 +1,7 @@
 ---
 layout: page
 title: studyroom
-youtubeId: sNwwUv1STz4
 published: true
 ---
 
-{% include youtubePlayer.html id=page.youtubeId %}
+{% include youtubePlayer.html id=page.SmCa3GMVNIM %}
