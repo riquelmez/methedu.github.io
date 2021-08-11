@@ -18,9 +18,12 @@ author: Clever
 
 navbar-links:
   Category: "category"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  ME SSCI Journals:
+    - ESM: "https://www.springer.com/journal/10649"
+    - ZDM: "https://link.springer.com/journal/11858/volumes-and-issues"
+    - MTL: "https://www.tandfonline.com/toc/hmtl20/current"
+    - IJSME: "https://www.springer.com/journal/10763"
+    - JMTE: "https://www.springer.com/journal/10857"
 
 # --- Logo --- #
 
