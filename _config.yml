@@ -17,8 +17,8 @@ author: Clever
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  동영상: "video
-  주제: "mathedu_topics"
+  동영상: "video"
+  주제: "research_topic"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
