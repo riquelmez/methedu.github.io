@@ -13,6 +13,6 @@ published: true
 
 ## A New Post
 
-{% soundcloud_sound riquelmes %}
+{% soundcloud_sound changgeun.son9@gmail.com %}
 
 [공부방](https://time-timer.netlify.app/time-timer.html){: target="_blank"}
