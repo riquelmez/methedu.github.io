@@ -19,11 +19,11 @@ author: Clever
 navbar-links:
   Category: "category"
   Journal Site:
-    - ESM: "https://www.springer.com/journal/10649"
-    - ZDM: "https://link.springer.com/journal/11858/volumes-and-issues"
-    - MTL: "https://www.tandfonline.com/toc/hmtl20/current"
-    - IJSME: "https://www.springer.com/journal/10763"
-    - JMTE: "https://www.springer.com/journal/10857"
+    - ESM: "https://www.springer.com/journal/10649" {: target="_blank"}
+    - ZDM: "https://link.springer.com/journal/11858/volumes-and-issues" {: target="_blank"}
+    - MTL: "https://www.tandfonline.com/toc/hmtl20/current" {: target="_blank"}
+    - IJSME: "https://www.springer.com/journal/10763" {: target="_blank"}
+    - JMTE: "https://www.springer.com/journal/10857"{: target="_blank"}
   Study room: "studyroom"
 
 # --- Logo --- #
@@ -241,4 +241,3 @@ plugins:
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-
