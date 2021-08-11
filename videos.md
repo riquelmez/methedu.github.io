@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lectures
+title: Videos
 youtubeId: hQBb_eOkcmA
 published: true
 ---
