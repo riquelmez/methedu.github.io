@@ -9,15 +9,15 @@ url: "https://riquelmez.github.io"
 baseurl: ""
 
 # Name of website
-title: My Website
+title: 수학 공부
 
 # Your name to show in the footer
-author: Some Person
+author: Clever
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
+  고등학교: "highschool_math"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
