@@ -1,12 +1,14 @@
 ---
 layout: page
 title: studyroom
-youtubeID: SmCa3GMVNIM
+youtubeID1: SmCa3GMVNIM
+youtubeID2: pjqXFo73BzA
+youtubeID3: H7bCIVSHY48
 published: true
 ---
 ## 한강뷰 Lofi
-{% include youtubePlayer.html id=page.youtubeID %}
+{% include youtubePlayer.html id=page.youtubeID1 %}
 ## 뉴에이지
-{% include youtubePlayer.html id=page.pjqXFo73BzA %}
+{% include youtubePlayer.html id=page.youtubeID2 %}
 ## 토이
-{% include youtubePlayer.html id=page.H7bCIVSHY48 %}
+{% include youtubePlayer.html id=page.youtubeID3 %}
