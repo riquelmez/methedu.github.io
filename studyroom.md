@@ -1,8 +1,9 @@
 ---
 layout: page
 title: studyroom
-youtubeId: SmCa3GMVNIM
 published: true
 ---
 ## 한강뷰
-{% include youtubePlayer.html id=page.youtubeId %}
+{% include youtubePlayer.html id=page.SmCa3GMVNIM %}
+## 토이
+{% include youtubePlayer.html id=page.H7bCIVSHY48 %}
