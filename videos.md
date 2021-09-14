@@ -8,5 +8,5 @@ published: true
 ## 수학교육 역사 / Radford
 {% include youtubePlayer.html id=page.youtubeID1 %}
 
-## 교사지식 / Deborah Ball
+## 교사지식 / Deborah Loewenberg Ball
 {% include youtubePlayer.html id=page.youtubeID2 %}
