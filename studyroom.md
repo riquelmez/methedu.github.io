@@ -1,6 +1,6 @@
 ---
 layout: page
-title: jukebox
+title: Jukebox
 youtubeID1: SmCa3GMVNIM
 youtubeID2: pjqXFo73BzA
 youtubeID3: H7bCIVSHY48
